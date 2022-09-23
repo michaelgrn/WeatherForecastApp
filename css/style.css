@@ -1,0 +1,41 @@
+.date{
+    display: inline-block;
+}
+
+.search-bar{
+
+}
+
+.temp{
+    display: inline-block;
+}
+
+.weather-state{
+    display: inline-block;
+}
+
+.weather-icon{
+    display: inline-block;
+}
+
+.wind-speed{
+    display: inline-block;
+}
+
+.wind-direction{
+    display: inline-block;
+}
+
+.card{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.card::before{
+    content: "";
+}
+
+.card::after{
+    content: "";
+}
