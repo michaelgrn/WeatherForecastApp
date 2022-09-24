@@ -6,7 +6,11 @@
 
 }
 
-.temp{
+.temp-low{
+    display: inline-block;
+}
+
+.temp-high{
     display: inline-block;
 }
 

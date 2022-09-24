@@ -6,20 +6,22 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <script src="./javascript/app.js" defer></script>
+    <title>Weekly Weather Forecast</title>
 </head>
 <body>
     <div class="search">
         WFA
-        <label><input type="text" class="search-bar" id="weather-search"></label>
+        <label><input type="text" class="search-bar" id="weather-search" placeholder = "Enter location"></label>
         <button type="submit">Search</button>
     </div>
     <h2 class="day">Today</h2>
     <div class="card">
         <div class="date">DD/MM/YY</div>
-        <div class="temp">XX.XX F</div>
+        <div class="temp-low">Low: XX.XX F</div>
+        <div class="temp-high">High: XX.XX F</div>
         <div class="weather-state">Weather State</div>
-        <div class="weather-icon">Weather Image</div>
+        <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="icon" width="50" height="50"/></div>
         <div class="wind-speed">Wind Speed</div>
         <div class="wind-direction">Wind Direction</div>
     </div>
