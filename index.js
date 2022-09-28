@@ -41,6 +41,11 @@ const server = http.createServer((req, res) => {
             res.setHeader('Content-Type', 'image/png');
             fs.createReadStream(filePath).pipe(res);
         }
+        else if (fileExt == '.txt') {
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'text/plain');
+            fs.createReadStream(filePath).pipe(res);
+        }
         else {
             filePath = path.resolve('./public/404.html');
             res.statusCode = 404;

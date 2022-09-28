@@ -1,421 +1,541 @@
-@media (max-width: 700px) {
-    /* desktop CSS: hide .logo-small div */
-    body {
-        margin: 0;
-        font-family: 'Open Sans', sans-serif;
-        background: #222;
-        background-image: url('https://source.unsplash.com/1600x900/?landscape');
-        align-items: center;
+    @media only screen and (min-width: 320px) and (max-width:480px){
+        /* desktop CSS: hide .logo-small div */
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: #222;
+            background-image: url('https://source.unsplash.com/1600x900/?landscape');
+            align-items: center;
+        }
+
+        .logo-big{
+            display:none;
+        }
+
+        .search-big{
+            display:none;
+        }
+
+        .logo-small{
+            font-size: 40px;
+            text-align: left;
+            float: left;
+            line-height: 40px;
+
+        }
+
+        .search-small{
+            height: 30px;
+            background-image: linear-gradient(royalblue, lightblue);
+            text-align: justify;
+            padding: 25px;
+            opacity: 85%;
+            /*display: flex-end;*/
+        }
+
+        .search-big {
+            height: 30px;
+            background-image: linear-gradient(royalblue, lightblue);
+            text-align: justify;
+            padding: 25px;
+            opacity: 85%;
+            /*display: flex-end;*/
+        }
+
+        .search-bar-container {
+            padding-left: 10px;
+            float: right;
+            opacity: 100%;
+        }
+
+        .search-bar {
+            height: 30px;
+            font-size: 20px;
+            background: white;
+            opacity: 95%;
+            color: Black;
+            width: 130px;
+            border-radius: 10px;
+            float: right;
+        }
+
+        .search-button {
+
+            height: 37px;
+            border-radius: 10px;
+            background: white;
+            opacity: 75%;
+            margin-left: 5px;
+            outline-color: invert;
+            font-size: 12px;
+            color: black;
+            transition-duration: 0.4s;
+            float: right;
+        }
+
+        .search-button:hover {
+            background-color: deepskyblue; /* Green */
+            color: white;
+        }
+
+        .card {
+            margin-bottom: 1em;
+            margin-top: 1em;
+            margin-left: .5em;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            width: 97%;
+            font-size: .875rem;
+            background-image: linear-gradient(to right, lightskyblue, white);
+            border-radius: 10px;
+        }
+
+        .card-main {
+            opacity: 85%;
+            margin: 1em;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            background-image: linear-gradient(to right, lightskyblue, white);
+            border-radius: 10px;
+            padding-bottom: 120px;
+            /*padding-top: 5px;*/
+        }
+
+        .card:hover {
+            opacity: 100%;
+        }
+
+        .card::before {
+            content: "";
+        }
+
+        .card::after {
+            content: "";
+        }
+
+        .date {
+            padding-left: 3px;
+            display: inline-block;
+            text-align: left;
+            width: 50px;
+            flex: 0 0 55px;
+        }
+
+        #date-0{
+            padding-left: 10px;
+            line-height: 25px;
+        }
+
+        .temp {
+            text-align: center;
+            line-height: 50px;
+            flex-basis: 5%;
+            padding: 0 6px 0 0;
+            flex: 0 0 65px;
+            display: flex;
+            align-items: center;
+        }
+
+        .weather-icon {
+            display: inline-block;
+            padding-right: 4px;
+            flex: 1 1 10px;
+            width: 30px;
+        }
+
+        .weather-state {
+            text-align: left;
+            display: inline-block;
+            line-height: 1;
+            flex: 1 1 auto;
+            display: flex;
+            font-size: 12px;
+        }
+
+
+
+        .wind-speed {
+            padding-right: 5px;
+            display: inline-block;
+            text-align: center;
+            line-height: 1;
+            font-size: 12px;
+            /*flex-basis: 5%;*/
+        }
+
+
+
+
+
+        .col-1 {
+            width: 98%;
+        }
+
+        .col-2 {
+            width: 98%;
+        }
+
+        .col-3 {
+            width: 98%;
+        }
+
+        .col-4 {
+            width: 98%;
+        }
+
+        .col-5 {
+            width: 98%;
+        }
+
+        .col-6 {
+            width: 98%;
+        }
+
+        .col-7 {
+            width: 98%;
+        }
+
+        .col-8 {
+            width: 98%;
+        }
+
+        .col-9 {
+            width: 98%;
+        }
+
+        .col-10 {
+            width: 98%;
+        }
+
+        .col-11 {
+            width: 98%;
+        }
+
+        .col-12 {
+            width: 98%;
+        }
+
+        [class*="col-"] {
+            float: left;
+
+            padding-bottom: 15px;
+            padding-top: 15px;
+
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .today {
+            height: 10%;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .autocomplete {
+            /*the container must be positioned relative:*/
+            position: relative;
+            display: inline-block;
+            float:right;
+            width: 130px;
+        }
+
+        .autocomplete-items {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            border-bottom: none;
+            border-top: none;
+            z-index: 10000;
+            /*position the autocomplete items to be the same width as the container:*/
+            top: 100%;
+            left: 0;
+            right: 0;
+        }
+        .autocomplete-items div {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            border-bottom: 1px solid #d4d4d4;
+            z-index: 1;
+        }
+        .autocomplete-items div:hover {
+            /*when hovering an item:*/
+            background-color: #e9e9e9;
+            z-index: 1;
+        }
+        .autocomplete-active {
+            /*when navigating through the items using the arrow keys:*/
+            background-color: DodgerBlue !important;
+            color: #ffffff;
+            z-index: 1;
+        }
+    }
+    @media (min-width: 480px) {
+        /* desktop CSS: hide .logo-big div */
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: #222;
+            background-image: url('https://source.unsplash.com/1600x900/?landscape');
+            align-items: center;
+        }
+
+        .logo-big{
+            font-size: 30px;
+            text-align: center;
+            float: left;
+            line-height: 30px;
+
+        }
+        .logo-small{
+            display: none;
+        }
+
+        .search {
+            height: 30px;
+            background-image: linear-gradient(royalblue, lightblue);
+            text-align: justify;
+            padding: 25px;
+            opacity: 85%;
+            /*display: flex-end;*/
+        }
+
+        .search-bar-container {
+            float: right;
+            opacity: 100%;
+            width: 130px;
+        }
+
+        .search-bar {
+            height: 25px;
+            font-size: 20px;
+            background: white;
+            opacity: 95%;
+            color: Black;
+            width: 140px;
+            border-radius: 10px;
+            float: right;
+        }
+
+        .search-button {
+
+            height: 30px;
+            border-radius: 10px;
+            background: white;
+            opacity: 75%;
+            margin-left: 5px;
+            outline-color: invert;
+            font-size: 20px;
+            color: black;
+            transition-duration: 0.4s;
+            float: right;
+        }
+
+        .search-button:hover {
+            background-color: deepskyblue; /* Green */
+            color: white;
+        }
+        .card {
+            margin: 1em;
+            /*opacity: 85%;*/
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            width: 100%;
+            font-size: .875rem;
+            background-image: linear-gradient(to right, lightskyblue, white);
+            border-radius: 10px;
+        }
+
+        .card-main {
+            opacity: 85%;
+            margin: 1em;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            background-image: linear-gradient(to right, lightskyblue, white);
+            border-radius: 10px;
+            padding-bottom: 120px;
+            /*padding-top: 5px;*/
+        }
+
+        .card:hover {
+            opacity: 100%;
+        }
+
+        .card::before {
+            content: "";
+        }
+
+        .card::after {
+            content: "";
+        }
+
+        .date {
+            padding-left: 6px;
+            display: inline-block;
+            text-align: left;
+            width: 50px;
+            flex: 0 0 60px;
+        }
+
+        #date-0{
+            padding-left: 10px;
+            line-height: 25px;
+        }
+
+        .temp {
+            text-align: center;
+            line-height: 50px;
+            flex-basis: 5%;
+            padding = 0 6px 0 0;
+            flex: 0 0 75px;
+            display: flex;
+            align-items: center;
+        }
+
+        .weather-icon {
+            display: inline-block;
+            padding-right: 4px;
+            flex: 1 1 50px;
+            width: 50px;
+
+        }
+        .weather-state {
+            text-align: left;
+            display: inline-block;
+            line-height: 50px;
+            flex: 1 1 auto;
+            display: flex;
+            align-items: left;
+        }
+
+
+
+        .wind-speed {
+           padding-right: 5px;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            width: 100 px;
+            /*flex-basis: 5%;*/
+        }
+
+
+
+
+
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding-left: 5px;
+            padding-bottom: 15px;
+            padding-top: 15px;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .today {
+            height: 10%;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .autocomplete {
+            /*the container must be positioned relative:*/
+            position: relative;
+            display: inline-block;
+            float: right;
+            width: 160px;
+        }
+
+        .autocomplete-items {
+            position: absolute;
+            border: 1px solid #d4d4d4;
+            border-bottom: none;
+            border-top: none;
+            z-index: 10000;
+            /*position the autocomplete items to be the same width as the container:*/
+            top: 100%;
+            left: 0;
+            right: 0;
+        }
+        .autocomplete-items div {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #fff;
+            border-bottom: 1px solid #d4d4d4;
+            z-index: 1;
+        }
+        .autocomplete-items div:hover {
+            /*when hovering an item:*/
+            background-color: #e9e9e9;
+            z-index: 1;
+        }
+        .autocomplete-active {
+            /*when navigating through the items using the arrow keys:*/
+            background-color: DodgerBlue !important;
+            color: #ffffff;
+            z-index: 1;
+        }
     }
-
-    .logo-big{
-        display:none;
-    }
-
-    .logo-small{
-        font-size: 40px;
-        text-align: center;
-        float: left;
-        line-height: 30px;
-
-    }
-
-    .search {
-        height: 30px;
-        background-image: linear-gradient(royalblue, lightblue);
-        border-radius: 5px;
-        text-align: justify;
-        padding: 25px;
-        opacity: 85%;
-        /*display: flex-end;*/
-    }
-
-    .search-bar-container {
-        float: right;
-        opacity: 100%;
-    }
-
-    .search-bar {
-        height: 25px;
-        font-size: 20px;
-        background: white;
-        opacity: 95%;
-        color: Black;
-        width: 200px;
-        border-radius: 10px;
-        float: right;
-    }
-
-    .search-button {
-
-        height: 30px;
-        border-radius: 10px;
-        background: white;
-        opacity: 75%;
-        margin-left: 5px;
-        outline-color: invert;
-        font-size: 20px;
-        color: black;
-        transition-duration: 0.4s;
-        float: right;
-    }
-
-    .search-button:hover {
-        background-color: deepskyblue; /* Green */
-        color: white;
-    }
-
-    .date {
-        display: inline-block;
-        text-align: left;
-        line-height: 50px;
-        flex-basis: 5%;
-    }
-
-    .temp {
-        display: inline-block;
-        text-align: center;
-        line-height: 50px;
-        flex-basis: 5%;
-    }
-
-    .weather-state {
-        display: inline-block;
-        text-align: center;
-        line-height: 50px;
-
-    }
-
-    .weather-icon {
-        display: inline-block;
-        flex-basis: 5%;
-    }
-
-    .wind-speed {
-        display: inline-block;
-        text-align: center;
-        line-height: 50px;
-    }
-
-    /*.wind-direction {*/
-    /*    display: inline-block;*/
-    /*    text-align: center;*/
-    /*    line-height: 50px;*/
-    /*    flex-basis: 5%;*/
-    /*}*/
-
-    .card {
-        opacity: 85%;
-        margin: 1em;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        background-image: linear-gradient(to right, lightskyblue, white);
-        border-radius: 10px;
-    }
-
-    .card-main {
-        opacity: 85%;
-        margin: 1em;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        background-image: linear-gradient(to right, lightskyblue, white);
-        border-radius: 10px;
-    }
-
-    .card:hover {
-        opacity: 100%;
-    }
-
-    .card::before {
-        content: "";
-    }
-
-    .card::after {
-        content: "";
-    }
-
-
-    .col-1 {
-        width: 95%;
-    }
-
-    .col-2 {
-        width: 95%;
-    }
-
-    .col-3 {
-        width: 95%;
-    }
-
-    .col-4 {
-        width: 95%;
-    }
-
-    .col-5 {
-        width: 95%;
-    }
-
-    .col-6 {
-        width: 95%;
-    }
-
-    .col-7 {
-        width: 95%;
-    }
-
-    .col-8 {
-        width: 95%;
-    }
-
-    .col-9 {
-        width: 95%;
-    }
-
-    .col-10 {
-        width: 95%;
-    }
-
-    .col-11 {
-        width: 95%;
-    }
-
-    .col-12 {
-        width: 95%;
-    }
-
-    [class*="col-"] {
-        float: left;
-        padding-left: 15px;
-        padding-bottom: 15px;
-        padding-top: 15px;
-        padding-right: 10px;
-    }
-
-    .row::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-
-    .today {
-        height: 10%;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-}
-@media (min-width: 700px) {
-    /* desktop CSS: hide .logo-big div */
-    body {
-        margin: 0;
-        font-family: 'Open Sans', sans-serif;
-        background: #222;
-        background-image: url('https://source.unsplash.com/1600x900/?landscape');
-        align-items: center;
-    }
-
-    .logo-big{
-        font-size: 30px;
-        text-align: center;
-        float: left;
-        line-height: 30px;
-
-    }
-    .logo-small{
-        display: none;
-    }
-
-    .search {
-        height: 30px;
-        background-image: linear-gradient(royalblue, lightblue);
-        text-align: justify;
-        padding: 25px;
-        opacity: 85%;
-        /*display: flex-end;*/
-    }
-
-    .search-bar-container {
-        float: right;
-        opacity: 100%;
-    }
-
-    .search-bar {
-        height: 25px;
-        font-size: 20px;
-        background: white;
-        opacity: 95%;
-        color: Black;
-        width: 200px;
-        border-radius: 10px;
-        float: right;
-    }
-
-    .search-button {
-
-        height: 30px;
-        border-radius: 10px;
-        background: white;
-        opacity: 75%;
-        margin-left: 5px;
-        outline-color: invert;
-        font-size: 20px;
-        color: black;
-        transition-duration: 0.4s;
-        float: right;
-    }
-
-    .search-button:hover {
-        background-color: deepskyblue; /* Green */
-        color: white;
-    }
-
-    .date {
-        display: inline-block;
-        text-align: left;
-        line-height: 50px;
-        flex-basis: 5%;
-    }
-
-    #date-0{
-        padding-left: 10px;
-        line-height: 25px;
-    }
-
-    .temp {
-        display: inline-block;
-        text-align: center;
-        line-height: 50px;
-        flex-basis: 5%;
-    }
-
-    .weather-state {
-        display: inline-block;
-        text-align: center;
-        line-height: 50px;
-
-    }
-
-    .weather-icon {
-        display: inline-block;
-
-    }
-
-    .wind-speed {
-        display: inline-block;
-        text-align: center;
-        line-height: 50px;
-        /*flex-basis: 5%;*/
-    }
-
-    /*.wind-direction {*/
-    /*    display: inline-block;*/
-    /*    text-align: center;*/
-    /*    line-height: 50px;*/
-    /*    flex-basis: 5%;*/
-    /*}*/
-
-    .card {
-        opacity: 85%;
-        margin: 1em;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        background-image: linear-gradient(to right, lightskyblue, white);
-        border-radius: 10px;
-    }
-
-    .card-main {
-        opacity: 85%;
-        margin: 1em;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        background-image: linear-gradient(to right, lightskyblue, white);
-        border-radius: 10px;
-        padding-bottom: 120px;
-        /*padding-top: 5px;*/
-    }
-
-    .card:hover {
-        opacity: 100%;
-    }
-
-    .card::before {
-        content: "";
-    }
-
-    .card::after {
-        content: "";
-    }
-
-
-    .col-1 {
-        width: 8.33%;
-    }
-
-    .col-2 {
-        width: 16.66%;
-    }
-
-    .col-3 {
-        width: 25%;
-    }
-
-    .col-4 {
-        width: 33.33%;
-    }
-
-    .col-5 {
-        width: 41.66%;
-    }
-
-    .col-6 {
-        width: 50%;
-    }
-
-    .col-7 {
-        width: 58.33%;
-    }
-
-    .col-8 {
-        width: 66.66%;
-    }
-
-    .col-9 {
-        width: 75%;
-    }
-
-    .col-10 {
-        width: 83.33%;
-    }
-
-    .col-11 {
-        width: 91.66%;
-    }
-
-    .col-12 {
-        width: 100%;
-    }
-
-    [class*="col-"] {
-        float: left;
-        padding-left: 15px;
-        padding-bottom: 15px;
-        padding-top: 15px;
-    }
-
-    .row::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-
-    .today {
-        height: 10%;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-}
