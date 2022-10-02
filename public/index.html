@@ -12,26 +12,13 @@
 
 <body>
 
-        <div class="search-small">
-            <div class="logo-small">7DF</div>
 
-
-            <div>
-                <button type="submit" class="search-button" ><img src="./img/search.png" height ="25px" width="25 px"></button>
-                <div class="autocomplete">
-                <label class="search-bar-container"><input type="text" class="search-bar" id="weather-search" placeholder = "Enter location"></label>
-                    </div>
-
-            </div>
-        </div>
-
-
-
-        <div class="search-big">
+        <div class="search">
             <div class="logo-big">7 Day Forecast</div>
             <div class="logo-small">7DF</div>
             <div>
                 <button type="submit" class="search-button">Search</button>
+                <button type="submit" class="search-button-small"> <img src="./img/icons/search.png" height ="25px" width="25 px" id ="search-glass"></button>
                 <div class="autocomplete" style="width:300px;">
                     <label class="search-bar-container"><input type="text" class="search-bar" id="weather-search" placeholder = "Enter location"></label>
                 </div>
@@ -110,20 +97,32 @@
 
 <script>
 
+    /**
+     * The purpose of this function is to open the preprocessed cities.txt
+     * and populate the cities variable for autocomplete to leverage. Uses
+     * XMLHttpRequest due to problems with Fetch().
+     * @param  {string} filePath relative path to cities.txt
+     * @return {listOfCities} list of cities
+     */
     function loadFile(filePath) {
         var result = null;
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", filePath, false);
         xmlhttp.send();
         if (xmlhttp.status==200) {
-            result = xmlhttp.responseText;
+            listOfCities = xmlhttp.responseText;
         }
         console.log(typeof result);
-        return result;
+        return listOfCities;
     }
 
-    var cities = loadFile("./data/cities.txt").split("\n")
-
+    /**
+     * Function used to generate the auto-complete field in the search bar.
+     * Taken from https://www.w3schools.com/howto/howto_js_autocomplete.asp
+     *
+     * @param  {string} inp text input in search bar
+     * @param  {string} arr array of words to eligible for auto-complete
+     */
     function autocomplete(inp, arr) {
         /*the autocomplete function takes two arguments,
         the text field element and an array of possible autocompleted values:*/
@@ -141,10 +140,12 @@
             a.setAttribute("class", "autocomplete-items");
             /*append the DIV element as a child of the autocomplete container:*/
             this.parentNode.appendChild(a);
+            numCities = 0
             /*for each item in the array...*/
             for (i = 0; i < arr.length; i++) {
                 /*check if the item starts with the same letters as the text field value:*/
-                if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+
+                if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase() && numCities < 10) { /*here to limit options?*/
                     /*create a DIV element for each matching element:*/
                     b = document.createElement("DIV");
                     /*make the matching letters bold:*/
@@ -161,6 +162,8 @@
                         closeAllLists();
                     });
                     a.appendChild(b);
+                    numCities = numCities+1;
+                    console.log(numCities);
                 }
             }
         });
@@ -221,8 +224,20 @@
         });
     }
 
+    /**
+     * Object designed to access weatherbi.io and populate the webapp
+     * with weather information.
+     */
     let weather = {
+
         "apikey": "7374afdfe8c04b72931d05680d8f1717",
+
+        /**
+         * Function designed to fetch api information and pass that json
+         * off to showWeather()
+         *
+         * @param  {string} city Name of the city to generate the forecast for
+         */
         getWeather: function(city){
             fetch(
                 "https://api.weatherbit.io/v2.0/forecast/daily?city="
@@ -240,40 +255,52 @@
                 })
                 .then((data) => this.showWeather(data));
         },
-
-        // ● Day of the week
-        // ● Date
-        // ● Temperature (high and low)
-        // ● Weather State (sunny, cloudly, rainy, snowy, etc)
-        // ● Weather Icons (matching weather state)
-        // ● Wind speed & direction
+        /**
+         * Function designed to populate the webpage with the following information
+         *      ● Day of the week
+         *      ● Date
+         *      ● Temperature (high and low)
+         *      ● Weather State (sunny, cloudly, rainy, snowy, etc)
+         *      ● Weather Icons (matching weather state)
+         *      ● Wind speed & direction
+         * Code currently commented out to populate name of city in designated field
+         * for later iteration.
+         * @param  {json} data  json from weatherbit.io api call
+         */
         showWeather: function(data){
+
             const weekday = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
             const {city_name, state_code, country_code} = data;
+
             for(let x = 0; x < 7; x++) {
                 const {datetime, high_temp, low_temp, wind_spd, wind_cdir} = data['data'][x.toString()];
                 const {icon, description} = data['data'][x.toString()]["weather"];
                 const d = new Date(datetime)
+
                 let day = weekday[d.getDay()];
                 let date = datetime.split("-")[2];
-                console.log(city_name, day, datetime, low_temp, high_temp, description, icon, wind_spd, wind_cdir);
+
+                document.querySelector("#date-"+x.toString()).innerHTML = day + " " + date;
+                document.querySelector("#temp-"+x.toString()).innerHTML = "<b>" + high_temp + "°" + "</b>/" + low_temp + "°";
+                document.querySelector("#weather-state-"+x.toString()).innerHTML = description;
+                document.querySelector("#icon-"+x.toString()).src = "img/icons/" + icon + ".png";
+                document.querySelector("#wind-speed-"+x.toString()).innerHTML ="<img src = img/icons/icon-wind.png alt=\"Small icon depicting the wind\" height = 10px width = 10px> " + wind_spd + " mph " + wind_cdir;
+
                 // if (state_code.match(/\d+/g) != null) {
                 //     document.querySelector("#city").innerHTML = "<h1>" +city_name + "</\h1> "  + country_code;
                 // } else {
                 //     document.querySelector("#city").innerHTML =  "<h1>" +city_name +", "+ state_code +  "</\h1>";
                 // }
-                document.querySelector("#date-"+x.toString()).innerHTML = day + " " + date;
-                document.querySelector("#temp-"+x.toString()).innerHTML = "<b>" + high_temp + "°" + "</b>/" + low_temp + "°";
-                document.querySelector("#weather-state-"+x.toString()).innerHTML = description;
-                document.querySelector("#icon-"+x.toString()).src = "https://www.weatherbit.io/static/img/icons/" + icon + ".png";
-                document.querySelector("#wind-speed-"+x.toString()).innerHTML ="<img src = img/icon-wind.png alt=\"Small icon depicting the wind\" height = 10px width = 10px> " + wind_spd + " mph " + wind_cdir;
-
             }
+
+            // clears the Search-Bar
             document.getElementById('weather-search').value = '';
-            // this.getCurrent(city_name + "," + state_code +"," + country_code);
 
         },
-
+        /**
+         * Unused function designed to get current Temperature of designated city.
+         * @param {string} city Name of city to get current forecast for
+         */
         getCurrent: function(city){
             fetch(
                 "https://api.weatherbit.io/v2.0/current?city="
@@ -292,33 +319,43 @@
                 .then((data) => this.showCurrent(data));
 
         },
-
+        /**
+         * Unused function used in conjunction with getCurrent() to populate fields         *
+         * @param {json} data Data for the city to get current forecast for
+         */
         showCurrent: function(data){
            console.log(data['data']['0']);
            const {app_temp} = data['data']['0']
            document.querySelector(".current-temp").innerHTML = "Current: "+ app_temp + "°";
 
         },
+        /**
+         * Function used with a listener to pass value of search-bar to getWeather
+         */
         search: function () {
             this.getWeather(document.querySelector(".search-bar").value);
         },
     };
 
+    // Add listener to search-button
     document.querySelector(".search-button").addEventListener("click", function () {
         weather.search();
     });
 
-    document
-        .querySelector(".search-bar")
-        .addEventListener("keyup", function (event) {
-            if (event.key == "Enter") {
-                weather.search();
-            }
-        });
+    // Add listener to search-bar
+    document.querySelector(".search-bar").addEventListener("keyup", function (event) {
+        if (event.key == "Enter") {
+            weather.search();
+        }
+    });
 
+    // Autopopulate website with Boise weather
     weather.getWeather("Boise,ID");
 
-    autocomplete(document.getElementById("weather-search"), cities);
+    // Load list of cities into cities variable for autocomplete()
+    let cities = loadFile("./data/cities.txt").split("\n")
 
+    // Activate autocomplete()
+    autocomplete(document.getElementById("weather-search"), cities);
 
 </script>
