@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="">
     <link rel="stylesheet" href="css/style.css">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
     <title>Seven Day Forecast</title>
 </head>
 
@@ -19,7 +23,7 @@
             <div>
                 <button type="submit" class="search-button">Search</button>
                 <button type="submit" class="search-button-small"> <img src="./img/icons/search.png" height ="25px" width="25 px" id ="search-glass"></button>
-                <div class="autocomplete" style="width:300px;">
+                <div class="autocomplete" >
                     <label class="search-bar-container"><input type="text" class="search-bar" id="weather-search" placeholder = "Enter location"></label>
                 </div>
             </div>
@@ -28,64 +32,72 @@
 
 
     <div class ="row">
-        <div class="col-11 menu">
+        <div class="col-5">
+
+            <div class="card-main">
+                <h2 class = "city-current">text</h2>
+                <h2 class = "city-current-full">text</h2>
+                <div class="temp-current" id = "temp-current">High: XX.XX F</div>
+            </div>
+        </div>
+        <div class="col-7">
             <div class="card">
-                <h4 class = "date" id="date-0">woof</h4>
+                <h4 class = "date" id="date-0">text</h4>
                 <div class="temp" id = "temp-0">High: XX.XX F</div>
-                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="icon" width="25" height="25" id = "icon-0"/></div>
+                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="weather-icon-image" id = "icon-0"/></div>
                 <div class="weather-state" id = "weather-state-0">Weather State</div>
                 <div class="wind-speed" id = "wind-speed-0">Wind Speed</div>
             </div>
 
             <div class="card">
-                <h4 class = "date" id="date-1">woof</h4>
+                <h4 class = "date" id="date-1">text</h4>
                 <div class="temp" id = "temp-1">High: XX.XX F</div>
-                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="icon" width="25" height="25" id = "icon-1"/></div>
+                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="weather-icon-image" id = "icon-1"/></div>
                 <div class="weather-state" id = "weather-state-1">Weather State</div>
                 <div class="wind-speed" id = "wind-speed-1">Wind Speed</div>
             </div>
 
 
             <div class="card">
-                <h4 class = "date"  id="date-2">woof</h4>
+                <h4 class = "date"  id="date-2">text</h4>
                 <div class="temp" id = "temp-2">High: XX.XX F</div>
-                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="icon" width="25" height="25" id = "icon-2"/></div>
+                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="weather-icon-image" id = "icon-2"/></div>
                 <div class="weather-state" id = "weather-state-2">Weather State</div>
                 <div class="wind-speed" id = "wind-speed-2">Wind Speed</div>
             </div>
 
 
             <div class="card">
-                <h4 class = "date" id="date-3">woof</h4>
+                <h4 class = "date" id="date-3">text</h4>
                 <div class="temp" id = "temp-3">High: XX.XX F</div>
-                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="icon" width="25" height="25" id = "icon-3"/></div>
+                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="weather-icon-image" id = "icon-3"/></div>
                 <div class="weather-state" id = "weather-state-3">Weather State</div>
                 <div class="wind-speed" id = "wind-speed-3">Wind Speed</div>
             </div>
 
 
             <div class="card">
-                <h4 class = "date" id="date-4">woof</h4>
+                <h4 class = "date" id="date-4">text</h4>
                 <div class="temp" id = "temp-4">High: XX.XX F</div>
-                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="icon" width="25" height="25" id = "icon-4"/></div>
+                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="weather-icon-image" id = "icon-4"/></div>
                 <div class="weather-state" id = "weather-state-4">Weather State</div>
                 <div class="wind-speed" id = "wind-speed-4">Wind Speed</div>
             </div>
 
 
             <div class="card">
-                <h4 class = "date" id="date-5">woof</h4>
+                <h4 class = "date" id="date-5">text</h4>
                 <div class="temp" id = "temp-5">High: XX.XX F</div>
-                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="icon" width="25" height="25" id = "icon-5"/></div>
+                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="weather-icon-image" id = "icon-5"/></div>
                 <div class="weather-state" id = "weather-state-5">Weather State</div>
                 <div class="wind-speed" id = "wind-speed-5">Wind Speed</div>
             </div>
 
 
             <div class="card">
-                <h4 class = "date" id="date-6">woof</h4>
+                <h4 class = "date" id="date-6">text</h4>
                 <div class="temp" id = "temp-6">High: XX.XX F</div>
-                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="icon" width="25" height="25" id = "icon-6"/></div>
+                <div class="weather-icon"><img src =https://www.weatherbit.io/static/img/icons/t01n.png alt="Visual description of the weather" class="weather-icon-image" id = "icon-6"/></div>
                 <div class="weather-state" id = "weather-state-6">Weather State</div>
                 <div class="wind-speed" id = "wind-speed-6">Wind Speed</div>
             </div>
@@ -140,7 +152,7 @@
             a.setAttribute("class", "autocomplete-items");
             /*append the DIV element as a child of the autocomplete container:*/
             this.parentNode.appendChild(a);
-            numCities = 0
+            numCities = 0 // Limits number of cities appearing in the autocomplete
             /*for each item in the array...*/
             for (i = 0; i < arr.length; i++) {
                 /*check if the item starts with the same letters as the text field value:*/
@@ -160,6 +172,8 @@
                         /*close the list of autocompleted values,
                         (or any other open lists of autocompleted values:*/
                         closeAllLists();
+                        weather.search();
+
                     });
                     a.appendChild(b);
                     numCities = numCities+1;
@@ -222,6 +236,12 @@
         document.addEventListener("click", function (e) {
             closeAllLists(e.target);
         });
+
+        document.querySelector(".search-bar").addEventListener("keyup", function (event) {
+            if (event.key == "Enter") {
+                closeAllLists();
+            }
+        });
     }
 
     /**
@@ -243,6 +263,7 @@
                 "https://api.weatherbit.io/v2.0/forecast/daily?city="
                 + city
                 +"&units=I"
+                +"&days=7"
                 +"&key="
                 + this.apikey
             )
@@ -284,21 +305,22 @@
                 document.querySelector("#temp-"+x.toString()).innerHTML = "<b>" + high_temp + "°" + "</b>/" + low_temp + "°";
                 document.querySelector("#weather-state-"+x.toString()).innerHTML = description;
                 document.querySelector("#icon-"+x.toString()).src = "img/icons/" + icon + ".png";
-                document.querySelector("#wind-speed-"+x.toString()).innerHTML ="<img src = img/icons/icon-wind.png alt=\"Small icon depicting the wind\" height = 10px width = 10px> " + wind_spd + " mph " + wind_cdir;
-
-                // if (state_code.match(/\d+/g) != null) {
-                //     document.querySelector("#city").innerHTML = "<h1>" +city_name + "</\h1> "  + country_code;
-                // } else {
-                //     document.querySelector("#city").innerHTML =  "<h1>" +city_name +", "+ state_code +  "</\h1>";
-                // }
+                document.querySelector("#wind-speed-"+x.toString()).innerHTML ="<img src = img/icons/icon-wind.png alt=\"Small icon depicting the wind\" id = \"wind-speed-icon\"> " + wind_cdir + " " + wind_spd + " mph " ;
             }
 
             // clears the Search-Bar
+            document.querySelector(".city-current").innerHTML =  city_name;
+            if (state_code.match(/\d+/g) != null) {
+                document.querySelector(".city-current-full").innerHTML =  city_name + ", "  + country_code;
+            } else {
+                document.querySelector(".city-current-full").innerHTML =  city_name +", "+ state_code + ", " + country_code;
+            }
             document.getElementById('weather-search').value = '';
+            weather.getCurrent(city_name)
 
         },
         /**
-         * Unused function designed to get current Temperature of designated city.
+         * Function designed to get current Temperature of designated city.
          * @param {string} city Name of city to get current forecast for
          */
         getCurrent: function(city){
@@ -320,13 +342,13 @@
 
         },
         /**
-         * Unused function used in conjunction with getCurrent() to populate fields         *
+         * Function used in conjunction with getCurrent() to populate fields         *
          * @param {json} data Data for the city to get current forecast for
          */
         showCurrent: function(data){
            console.log(data['data']['0']);
            const {app_temp} = data['data']['0']
-           document.querySelector(".current-temp").innerHTML = "Current: "+ app_temp + "°";
+           document.querySelector(".temp-current").innerHTML = app_temp + "°";
 
         },
         /**
