@@ -241,7 +241,7 @@
     }
 
     /**
-     * Object designed to access weatherbi.io and populate the webapp
+     * Object designed to access weatherbit.io and populate the webapp
      * with weather information.
      */
     let weather = {
@@ -374,6 +374,9 @@
 
     // Load list of cities into cities variable for autocomplete()
     let cities = loadFile("./data/cities.txt").split("\n")
+    // let cities = loadFile("./data/cities1K.txt").split("\n")
+    // let cities = loadFile("./data/cities15K.txt").split("\n")
+
 
     // Activate autocomplete()
     autocomplete(document.getElementById("weather-search"), cities);
