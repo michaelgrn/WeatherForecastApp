@@ -1,913 +1,1201 @@
-        body {
-            margin: 0;
-            font-family: 'Open Sans', sans-serif;
-            background: #222;
-            background-image: url('https://source.unsplash.com/1600x900/?landscape');
-            align-items: center;
-        }
+body {
+    margin: 0;
+    font-family: 'Helvetica', sans-serif;
+    background-image: url('https://source.unsplash.com/1600x900/?landscape');
+    align-items: center;
+}
+a:link {
+    color: black;
+}
 
-        @media only screen and (min-width: 320px) and (max-width:480px){
-        /* desktop CSS: hide .logo-small div */
+a:visited {
+    color: black;
+}
 
-        .logo-big{
-            display:none;
-        }
+a:hover {
+    color: black;
+}
 
-        .search-big{
-            display:none;
-        }
+a:active {
+    color: black;
+}
 
-        .logo-small{
-            font-size: 40px;
-            text-align: left;
-            float: left;
-            line-height: 40px;
-            z-index: 2;
+@media only screen and (min-width: 320px) and (max-width:480px){
 
-        }
-
-        .search{
-            height: 30px;
-            background-image: linear-gradient(royalblue, lightblue);
-            text-align: justify;
-            padding: 25px 10px 25px 10px;
-            opacity: 85%;
-            /*display: flex-end;*/
-        }
-
-        .search-big {
-            height: 30px;
-            background-image: linear-gradient(royalblue, lightblue);
-            text-align: justify;
-            padding: 25px;
-            opacity: 85%;
-            /*display: flex-end;*/
-        }
-
-        .search-bar-container {
-            padding-left: 10px;
-            float: right;
-            opacity: 100%;
-        }
-
-        .search-bar {
-            height: 30px;
-            font-size: 20px;
-            background: white;
-            opacity: 95%;
-            color: Black;
-            width: 130px;
-            border-radius: 10px;
-            float: right;
-        }
-
-        .search-button {
-
-            height: 37px;
-            border-radius: 10px;
-            background: white;
-            opacity: 75%;
-            margin-left: 5px;
-            outline-color: invert;
-            font-size: 12px;
-            color: black;
-            transition-duration: 0.4s;
-            float: right;
-            display: none;
-        }
-
-        .search-button-small{
-
-            height: 37px;
-            border-radius: 10px;
-            background: white;
-            opacity: 75%;
-            margin-left: 5px;
-            outline-color: invert;
-            font-size: 12px;
-            color: black;
-            transition-duration: 0.4s;
-            float: right;
-
-        }
-
-        .search-button:hover {
-            background-color: deepskyblue; /* Green */
-            color: white;
-        }
-
-        .card {
-            margin-bottom: 1em;
-            margin-top: 1em;
-            margin-left: 2%;
-            margin-right: 2%;
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            width: 98%;
-            font-size: .875rem;
-            background-image: linear-gradient(to right, lightskyblue, white);
-            border-radius: 10px;
-        }
-
-        .card-main {
-            margin-left: 2%;
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            width: 98%;
-            font-size: .875rem;
-            background-image: linear-gradient(to right, lightskyblue, white);
-            border-radius: 10px;
-        }
-
-        .card:hover {
-            opacity: 100%;
-        }
-
-        .card::before {
-            content: "";
-        }
-
-        .card::after {
-            content: "";
-        }
-
-        .city-current {
-            padding-left: 3px;
-            display: inline-block;
-            text-align: left;
-            flex: 1 1 auto;
-            font-family: 'Roboto Thin', sans-serif;
-        }
-
-        .city-current-full {
-            padding-left: 3px;
-            text-align: left;
-            flex: 1 1 auto;
-            font-family: 'Roboto Thin', sans-serif;
-            display:none;
-        }
-
-        .date {
-            padding-left: 3px;
-            display: inline-block;
-            text-align: left;
-            width: 50px;
-            flex: 0 0 55px;
-        }
-
-        .temp {
-            text-align: center;
-            line-height: 50px;
-            padding: 0 6px 0 0;
-            flex: 0 0 65px;
-            display: flex;
-            align-items: center;
-        }
-
-        .temp-current {
-            float: right;
-            text-align: left;
-            font-style: italic;
-            font-size: 30px;
-            padding-right: 10px;
-
-        }
-
-        .weather-icon {
-            display: inline-block;
-            padding-right: 4px;
-            flex: 1 1 10px;
-            width: 30px;
-        }
-
-        .weather-icon-image{
-            width:25px;
-            height:25px;
-        }
-
-        .weather-state {
-            text-align: left;
-            display: inline-block;
-            line-height: 1;
-            flex: 1 1 auto;
-            display: flex;
-            font-size: 12px;
-        }
-
-
-
-        .wind-speed {
-            padding-right: 5px;
-            display: inline-block;
-            text-align: center;
-            line-height: 1;
-            font-size: 12px;
-            /*flex-basis: 5%;*/
-        }
-
-        #wind-speed-icon {
-            height: 10px;
-            width: 10px;
-
-        }
-
-        .col-1 {
-            width: 98%;
-        }
-
-        .col-2 {
-            width: 98%;
-        }
-
-        .col-3 {
-            width: 98%;
-        }
-
-        .col-4 {
-            width: 98%;
-        }
-
-        .col-5 {
-            width: 98%;
-        }
-
-        .col-6 {
-            width: 98%;
-        }
-
-        .col-7 {
-            width: 98%;
-        }
-
-        .col-8 {
-            width: 98%;
-        }
-
-        .col-9 {
-            width: 98%;
-        }
-
-        .col-10 {
-            width: 98%;
-        }
-
-        .col-11 {
-            width: 98%;
-        }
-
-        .col-12 {
-            width: 98%;
-        }
-
-        [class*="col-"] {
-            float: left;
-            padding-bottom: 15px;
-            padding-top: 15px;
-
-        }
-
-        .row::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-
-        .today {
-            height: 10%;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-
-        .autocomplete {
-            /*the container must be positioned relative:*/
-            position: relative;
-            display: inline-block;
-            float:right;
-            width: 180px;
-        }
-
-        .autocomplete-items {
-            position: absolute;
-            border: 1px solid #d4d4d4;
-            border-bottom: none;
-            border-top: none;
-            z-index: 1;
-            /*position the autocomplete items to be the same width as the container:*/
-            top: 100%;
-            left: 0;
-            right: 0;
-        }
-        .autocomplete-items div {
-            padding: 10px;
-            cursor: pointer;
-            background-color: #fff;
-            border-bottom: 1px solid #d4d4d4;
-            z-index: 1;
-        }
-        .autocomplete-items div:hover {
-            /*when hovering an item:*/
-            background-color: #e9e9e9;
-            z-index: 1;
-        }
-        .autocomplete-active {
-            /*when navigating through the items using the arrow keys:*/
-            background-color: DodgerBlue;
-            color: #ffffff;
-            z-index: 1;
-        }
+    .logo-small{
+        font-size: 40px;
+        text-align: left;
+        float: left;
+        line-height: 40px;
+        z-index: 2;
     }
 
-        @media only screen and (min-width: 481px) and (max-width:768px){
-        /* desktop CSS: hide .logo-big div */
-            .logo-big{
-                font-size: 35px;
-                text-align: center;
-                float: left;
-                line-height: 30px;
-                display: none;
-            }
-
-
-            .search-big{
-                display:none;
-            }
-
-            .logo-small{
-                font-size: 40px;
-                text-align: left;
-                float: left;
-                line-height: 40px;
-                z-index: 2;
-
-            }
-
-            .search{
-                height: 30px;
-                background-image: linear-gradient(royalblue, lightblue);
-                text-align: justify;
-                padding: 25px 10px 25px 10px;
-                opacity: 85%;
-                /*display: flex-end;*/
-            }
-
-            .search-big {
-                height: 30px;
-                background-image: linear-gradient(royalblue, lightblue);
-                text-align: justify;
-                padding: 25px;
-                opacity: 85%;
-                /*display: flex-end;*/
-            }
-
-            .search-bar-container {
-                padding-left: 10px;
-                float: right;
-                opacity: 100%;
-            }
-
-            .search-bar {
-                height: 30px;
-                font-size: 20px;
-                background: white;
-                opacity: 95%;
-                color: Black;
-                width: 150px;
-                border-radius: 10px;
-                float: right;
-            }
-
-            .search-button {
-                font-size: 20px;
-                height: 37px;
-                border-radius: 10px;
-                background: white;
-                opacity: 75%;
-                margin-left: 5px;
-                outline-color: invert;
-                color: black;
-                transition-duration: 0.4s;
-                float: right;
-            }
-
-            .search-button-small{
-
-                height: 37px;
-                border-radius: 10px;
-                opacity: 75%;
-                margin-left: 5px;
-                outline-color: invert;
-                font-size: 12px;
-                color: black;
-                transition-duration: 0.4s;
-                float: right;
-                display: none;
-
-            }
-
-            .search-button:hover {
-                background-color: deepskyblue; /* Green */
-                color: white;
-            }
-
-            .card {
-                margin-bottom: 1em;
-                margin-top: 1em;
-                margin-left: .5em;
-                margin-right: .5em;
-                display: flex;
-                flex-flow: row nowrap;
-                align-items: center;
-                width: 100%;
-                font-size: 1rem;
-                background-image: linear-gradient(to right, lightskyblue, white);
-                border-radius: 10px;
-            }
-
-            .card-main {
-                margin-left: .5em;
-                margin-right: .5em;
-                display: flex;
-                flex-flow: row nowrap;
-                align-items: center;
-                width: 100%;
-                font-size: .875rem;
-                background-image: linear-gradient(to right, lightskyblue, white);
-                border-radius: 10px;
-            }
-
-            .card:hover {
-                opacity: 100%;
-            }
-
-            .card::before {
-                content: "";
-            }
-
-            .card::after {
-                content: "";
-            }
-
-            .date {
-                padding-left: 3px;
-                display: inline-block;
-                text-align: left;
-                width: 50px;
-                flex: 0 0 75px;
-            }
-
-            .city-current {
-                display: none;
-            }
-
-            .city-current-full {
-                padding-left: 3px;
-                display: inline-block;
-                text-align: left;
-                flex: 1 1 auto;
-                font-family: 'Roboto Thin', sans-serif;
-                font-size: 175%;
-            }
-
-            .temp {
-                text-align: center;
-                line-height: 50px;
-                flex-basis: 5%;
-                padding: 0 6px 0 0;
-                flex: 0 0 100px;
-                display: flex;
-                align-items: center;
-            }
-
-            .temp-current {
-                float: right;
-                text-align: left;
-                font-style: italic;
-                font-size: 35px;
-                padding-right: 10px;
-
-            }
-
-            .weather-icon {
-                display: inline-block;
-                padding-right: 4px;
-                flex: 1 1 15px;
-                width: 30px;
-            }
-
-            .weather-icon-image{
-                width:45px;
-                height:45px;
-            }
-
-            .weather-state {
-                text-align: left;
-                line-height: 1;
-                flex: 100px 0 0;
-                display: flex;
-
-            }
-
-            .wind-speed {
-                padding-right: 5px;
-                display: inline-block;
-                text-align: center;
-                line-height: 1;
-            }
-
-           #wind-speed-icon {
-               height: 15px;
-               width: 15px;
-
-            }
-
-            .col-1 {
-                width: 98%;
-            }
-
-            .col-2 {
-                width: 98%;
-            }
-
-            .col-3 {
-                width: 98%;
-            }
-
-            .col-4 {
-                width: 98%;
-            }
-
-            .col-5 {
-                width: 98%;
-            }
-
-            .col-6 {
-                width: 98%;
-            }
-
-            .col-7 {
-                width: 98%;
-            }
-
-            .col-8 {
-                width: 98%;
-            }
-
-            .col-9 {
-                width: 98%;
-            }
-
-            .col-10 {
-                width: 98%;
-            }
-
-            .col-11 {
-                width: 98%;
-            }
-
-            .col-12 {
-                width: 98%;
-            }
-
-            [class*="col-"] {
-                float: left;
-                padding-bottom: 15px;
-                padding-top: 15px;
-
-            }
-
-            .row::after {
-                content: "";
-                clear: both;
-                display: table;
-            }
-
-            .today {
-                height: 10%;
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-            }
-
-
-
-        .autocomplete {
-            /*the container must be positioned relative:*/
-            position: relative;
-            display: inline-block;
-            float: right;
-            width: 250px
-        }
-
-        .autocomplete-items {
-            position: absolute;
-            border: 1px solid #d4d4d4;
-            border-bottom: none;
-            border-top: none;
-            z-index: 10000;
-            /*position the autocomplete items to be the same width as the container:*/
-            top: 100%;
-            left: 0;
-            right: 0;
-        }
-        .autocomplete-items div {
-            padding: 10px;
-            cursor: pointer;
-            background-color: #fff;
-            border-bottom: 1px solid #d4d4d4;
-            z-index: 1;
-        }
-        .autocomplete-items div:hover {
-            /*when hovering an item:*/
-            background-color: #e9e9e9;
-            z-index: 1;
-        }
-        .autocomplete-active {
-            /*when navigating through the items using the arrow keys:*/
-            background-color: DodgerBlue;
-            color: #ffffff;
-            z-index: 1;
-        }
+    .logo-big{
+        display:none;
     }
-    @media only screen and (min-width: 769px) and (max-width:1024px){
-        .logo-big{
-            font-size: 40px;
-            text-align: center;
-            float: left;
-            line-height: 30px;
 
-        }
-
-        .logo-small{
-            font-size: 40px;
-            text-align: left;
-            float: left;
-            line-height: 40px;
-            z-index: 2;
-            display: none;
-
-        }
-
-        .search{
-            height: 30px;
-            background-image: linear-gradient(royalblue, lightblue);
-            text-align: justify;
-            padding: 25px 10px 25px 10px;
-            opacity: 85%;
-            /*display: flex-end;*/
-        }
-
-        .search-big {
-            height: 30px;
-            background-image: linear-gradient(royalblue, lightblue);
-            text-align: justify;
-            padding: 25px;
-            opacity: 85%;
-            /*display: flex-end;*/
-        }
-
-        .search-bar-container {
-            padding-left: 10px;
-            float: right;
-            opacity: 100%;
-        }
-
-        .search-bar {
-            height: 30px;
-            font-size: 20px;
-            background: white;
-            opacity: 95%;
-            color: Black;
-            width: 150px;
-            border-radius: 10px;
-            float: right;
-        }
-
-        .search-button {
-            font-size: 20px;
-            height: 37px;
-            border-radius: 10px;
-            background: white;
-            opacity: 75%;
-            margin-left: 5px;
-            outline-color: invert;
-            color: black;
-            transition-duration: 0.4s;
-            float: right;
-        }
-
-        .search-button-small{
-
-            height: 37px;
-            border-radius: 10px;
-            opacity: 75%;
-            margin-left: 5px;
-            outline-color: invert;
-            font-size: 12px;
-            color: black;
-            transition-duration: 0.4s;
-            float: right;
-            display: none;
-
-        }
-
-        .search-button:hover {
-            background-color: deepskyblue; /* Green */
-            color: white;
-        }
-
-        .card {
-            margin-bottom: 1em;
-            margin-top: 1em;
-            margin-left: .5em;
-            margin-right: .5em;
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            width: 100%;
-            font-size: 1rem;
-            background-image: linear-gradient(to right, lightskyblue, white);
-            border-radius: 10px;
-        }
-
-        .card-main {
-            padding-top: 5px;
-            margin-left: .5em;
-            margin-right: .5em;
-            display: flex;
-            flex-flow: row nowrap;
-            align-items: center;
-            width: 100%;
-            font-size: .875rem;
-            background-image: linear-gradient(to right, lightskyblue, white);
-            border-radius: 10px;
-            height:510px;
-
-        }
-
-        .card:hover {
-            opacity: 100%;
-        }
-
-        .card::before {
-            content: "";
-        }
-
-        .card::after {
-            content: "";
-        }
-
-        .date {
-            padding-left: 3px;
-            display: inline-block;
-            text-align: left;
-            width: 50px;
-            flex: 0 0 75px;
-        }
-
-        .city-current {
-            display: none;
-        }
-
-        .city-current-full {
-            padding-left: 3px;
-            display: inline-block;
-            text-align: left;
-            flex: 1 1 auto;
-            font-family: 'Roboto Thin', sans-serif;
-            font-size: 175%;
-        }
-
-        .temp {
-            text-align: center;
-            line-height: 50px;
-            flex-basis: 5%;
-            padding: 0 6px 0 0;
-            flex: 0 0 100px;
-            display: flex;
-            align-items: center;
-        }
-
-        .temp-current {
-            float: right;
-            text-align: left;
-            font-style: italic;
-            font-size: 35px;
-            padding-right: 10px;
-
-        }
-
-        .weather-icon {
-            display: inline-block;
-            padding-right: 4px;
-            flex: 1 1 15px;
-            width: 30px;
-        }
-
-        .weather-icon-image{
-            width:45px;
-            height:45px;
-        }
-
-        .weather-state {
-            text-align: left;
-            line-height: 1;
-            flex: 100px 0 0;
-            display: flex;
-
-        }
-
-        .wind-speed {
-            padding-right: 5px;
-            display: inline-block;
-            text-align: center;
-            line-height: 1;
-        }
-
-        #wind-speed-icon {
-            height: 15px;
-            width: 15px;
-
-        }
-
-        .col-1 {width: 8.33%;}
-        .col-2 {width: 16.66%;}
-        .col-3 {width: 25%;}
-        .col-4 {width: 33.33%;}
-        .col-5 {width: 41.66%;
-            padding-bottom: 20px;
-            padding-top: 30px;
-            padding-left: 15px;
-            padding-right: 15px;}
-        .col-6 {width: 50%;}
-        .col-7 {width: 51%;
-            padding-bottom: 15px;
-            padding-top: 15px;}
-        .col-8 {width: 66.66%;}
-        .col-9 {width: 75%;}
-        .col-10 {width: 83.33%;}
-        .col-11 {width: 91.66%;}
-        .col-12 {width: 100%;}
-
-        [class*="col-"] {
-            float: left;
-
-
-        }
-
-        .row::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-
-        .today {
-            height: 10%;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-
-
-        .autocomplete {
-            /*the container must be positioned relative:*/
-            position: relative;
-            display: inline-block;
-            float: right;
-            width: 250px
-        }
-
-        .autocomplete-items {
-            position: absolute;
-            border: 1px solid #d4d4d4;
-            border-bottom: none;
-            border-top: none;
-            z-index: 10000;
-            /*position the autocomplete items to be the same width as the container:*/
-            top: 100%;
-            left: 0;
-            right: 0;
-        }
-        .autocomplete-items div {
-            padding: 10px;
-            cursor: pointer;
-            background-color: #fff;
-            border-bottom: 1px solid #d4d4d4;
-            z-index: 1;
-        }
-        .autocomplete-items div:hover {
-            /*when hovering an item:*/
-            background-color: #e9e9e9;
-            z-index: 1;
-        }
-        .autocomplete-active {
-            /*when navigating through the items using the arrow keys:*/
-            background-color: DodgerBlue;
-            color: #ffffff;
-            z-index: 1;
-        }
+    .search{
+        height: 30px;
+        background-image: linear-gradient(royalblue, lightblue);
+        text-align: justify;
+        padding: 25px 10px 25px 10px;
+        opacity: 85%;
     }
+
+    .search-bar-container {
+        padding-left: 10px;
+        float: right;
+        opacity: 100%;
+    }
+
+    .search-bar {
+        height: 30px;
+        font-size: 20px;
+        background: white;
+        opacity: 95%;
+        color: Black;
+        width: 130px;
+        border-radius: 10px;
+        float: right;
+    }
+
+    .search-button {
+        display: none;
+    }
+
+    .search-button-small{
+        height: 37px;
+        border-radius: 10px;
+        background: white;
+        opacity: 75%;
+        margin-left: 5px;
+        outline-color: invert;
+        font-size: 12px;
+        color: black;
+        transition-duration: 0.4s;
+        float: right;
+    }
+
+    .search-button:hover {
+        background-color: deepskyblue; /* Green */
+        color: white;
+    }
+
+    #search-glass {
+        height:25px;
+        width:25px;
+    }
+
+    .search-button-small:hover {
+        background-color: deepskyblue; /* Green */
+        color: white;
+    }
+
+    .card {
+        margin: 1em 2% 1em 2%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 98%;
+        font-size: .875rem;
+        background-image: linear-gradient(to right, lightskyblue, white);
+        border-radius: 10px;
+    }
+
+    .card-main {
+        margin-left: 2%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 98%;
+        font-size: .875rem;
+        background-image: linear-gradient(to right, lightskyblue, white);
+        border-radius: 10px;
+    }
+
+    .card:hover {
+        opacity: 100%;
+    }
+
+    .card::before {
+        content: "";
+    }
+
+    .card::after {
+        content: "";
+    }
+
+    .city-current {
+        padding-left: 3px;
+        display: inline-block;
+        text-align: left;
+        flex: 1 1 auto;
+        font-family: 'Roboto Thin', sans-serif;
+    }
+
+    .city-current-full {
+        padding-left: 3px;
+        text-align: left;
+        flex: 1 1 auto;
+        font-family: 'Roboto Thin', sans-serif;
+        display:none;
+    }
+
+    .date {
+        padding-left: 3px;
+        display: inline-block;
+        text-align: left;
+        width: 50px;
+        flex: 0 0 55px;
+    }
+
+    .temp {
+        text-align: center;
+        line-height: 50px;
+        padding: 0 6px 0 0;
+        flex: 0 0 65px;
+        display: flex;
+        align-items: center;
+    }
+
+    .temp-current {
+        float: right;
+        text-align: left;
+        font-style: italic;
+        font-size: 30px;
+        padding-right: 10px;
+
+    }
+
+    .weather-icon-current{
+        height: 300px;
+        width: 300px;
+        display:none;
+    }
+
+    .weather-icon {
+        display: inline-block;
+        padding-right: 4px;
+        flex: 1 1 10px;
+        width: 30px;
+    }
+
+    .weather-icon-image{
+        width:25px;
+        height:25px;
+    }
+
+    .weather-state {
+        text-align: left;
+        line-height: 1;
+        flex: 1 1 auto;
+        display: flex;
+        font-size: 12px;
+    }
+
+    .wind-speed {
+        padding-right: 5px;
+        display: inline-block;
+        text-align: center;
+        line-height: 1;
+        font-size: 12px;
+        /*flex-basis: 5%;*/
+    }
+
+    #wind-speed-icon {
+        height: 10px;
+        width: 10px;
+
+    }
+
+    .col-1 {
+        width: 98%;
+    }
+
+    .col-2 {
+        width: 98%;
+    }
+
+    .col-3 {
+        width: 98%;
+    }
+
+    .col-4 {
+        width: 98%;
+    }
+
+    .col-5 {
+        width: 98%;
+        padding-top: 15px;
+    }
+
+    .col-6 {
+        width: 98%;
+    }
+
+    .col-7 {
+        width: 98%;
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+
+    .col-8 {
+        width: 98%;
+    }
+
+    .col-9 {
+        width: 98%;
+    }
+
+    .col-10 {
+        width: 98%;
+    }
+
+    .col-11 {
+        width: 98%;
+    }
+
+    .col-12 {
+        width: 98%;
+    }
+
+    [class*="col-"] {
+        float: left;
+
+
+    }
+
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .today {
+        height: 10%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .autocomplete {
+        /*the container must be positioned relative:*/
+        position: relative;
+        display: inline-block;
+        float:right;
+        width: 180px;
+    }
+
+    .autocomplete-items {
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 1;
+        /*position the autocomplete items to be the same width as the container:*/
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+    .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border-bottom: 1px solid #d4d4d4;
+        z-index: 1;
+    }
+    .autocomplete-items div:hover {
+        /*when hovering an item:*/
+        background-color: #e9e9e9;
+        z-index: 1;
+    }
+    .autocomplete-active {
+        /*when navigating through the items using the arrow keys:*/
+        background-color: DodgerBlue;
+        color: #ffffff;
+        z-index: 1;
+    }
+}
+@media only screen and (min-width: 481px) and (max-width:768px){
+/* desktop CSS: hide .logo-big div */
+    .logo-big{
+        font-size: 35px;
+        text-align: center;
+        float: left;
+        line-height: 30px;
+        display: none;
+    }
+
+
+    .search-big{
+        display:none;
+    }
+
+    .logo-small{
+        font-size: 40px;
+        text-align: left;
+        float: left;
+        line-height: 40px;
+        z-index: 2;
+
+    }
+
+    .search{
+        height: 30px;
+        background-image: linear-gradient(royalblue, lightblue);
+        text-align: justify;
+        padding: 25px 10px 25px 10px;
+        opacity: 85%;
+        /*display: flex-end;*/
+    }
+
+    .search-big {
+        height: 30px;
+        background-image: linear-gradient(royalblue, lightblue);
+        text-align: justify;
+        padding: 25px;
+        opacity: 85%;
+        /*display: flex-end;*/
+    }
+
+    .search-bar-container {
+        padding-left: 10px;
+        float: right;
+        opacity: 100%;
+    }
+
+    .search-bar {
+        height: 30px;
+        font-size: 20px;
+        background: white;
+        opacity: 95%;
+        color: Black;
+        width: 150px;
+        border-radius: 10px;
+        float: right;
+    }
+
+    .search-button {
+        font-size: 20px;
+        height: 37px;
+        border-radius: 10px;
+        background: white;
+        opacity: 75%;
+        margin-left: 5px;
+        outline-color: invert;
+        color: black;
+        transition-duration: 0.4s;
+        float: right;
+    }
+
+    .search-button-small{
+
+        height: 37px;
+        border-radius: 10px;
+        opacity: 75%;
+        margin-left: 5px;
+        outline-color: invert;
+        font-size: 12px;
+        color: black;
+        transition-duration: 0.4s;
+        float: right;
+        display: none;
+
+    }
+
+    .search-button:hover {
+        background-color: deepskyblue; /* Green */
+        color: white;
+    }
+
+    .card {
+        margin-bottom: 1em;
+        margin-top: 1em;
+        margin-left: .5em;
+        margin-right: .5em;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 100%;
+        font-size: 1rem;
+        background-image: linear-gradient(to right, lightskyblue, white);
+        border-radius: 10px;
+    }
+
+    .card-main {
+        margin-left: .5em;
+        margin-right: .5em;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 100%;
+        font-size: .875rem;
+        background-image: linear-gradient(to right, lightskyblue, white);
+        border-radius: 10px;
+    }
+
+    .card:hover {
+        opacity: 100%;
+    }
+
+    .card::before {
+        content: "";
+    }
+
+    .card::after {
+        content: "";
+    }
+
+    .date {
+        padding-left: 3px;
+        display: inline-block;
+        text-align: left;
+        width: 50px;
+        flex: 0 0 75px;
+    }
+
+    .city-current {
+        display: none;
+    }
+
+    .city-current-full {
+        padding-left: 3px;
+        display: inline-block;
+        text-align: left;
+        flex: 1 1 auto;
+        font-family: 'Roboto Thin', sans-serif;
+        font-size: 170%;
+    }
+
+    .weather-icon-current{
+        height: 300px;
+        width: 300px;
+        display:none;
+    }
+
+    .temp {
+        text-align: center;
+        line-height: 50px;
+        padding: 0 6px 0 0;
+        flex: 0 0 100px;
+        display: flex;
+        align-items: center;
+    }
+
+    .temp-current {
+        float: right;
+        text-align: left;
+        font-style: italic;
+        font-size: 35px;
+        padding-right: 10px;
+
+    }
+
+    .weather-icon {
+        display: inline-block;
+        padding-right: 4px;
+        flex: 1 1 15px;
+        width: 45px;
+    }
+
+    .weather-icon-image{
+        width:45px;
+        height:45px;
+    }
+
+    .weather-state {
+        text-align: right;
+        line-height: 1;
+        flex: auto 0 1;
+        display: flex;
+        padding-right: 10px;
+    }
+
+    .wind-speed {
+        padding-right: 5px;
+        display: inline-block;
+        text-align: center;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+
+   #wind-speed-icon {
+       height: 15px;
+       width: 15px;
+
+    }
+    .col-1 {
+        width: 98%;
+    }
+
+    .col-2 {
+        width: 98%;
+    }
+
+    .col-3 {
+        width: 98%;
+    }
+
+    .col-4 {
+        width: 98%;
+    }
+
+    .col-5 {
+        width: 98%;
+        padding-top: 15px;
+    }
+
+    .col-6 {
+        width: 98%;
+    }
+
+    .col-7 {
+        width: 98%;
+        padding-bottom: 15px;
+        padding-top: 15px;
+    }
+
+    .col-8 {
+        width: 98%;
+    }
+
+    .col-9 {
+        width: 98%;
+    }
+
+    .col-10 {
+        width: 98%;
+    }
+
+    .col-11 {
+        width: 98%;
+    }
+
+    .col-12 {
+        width: 98%;
+    }
+
+    [class*="col-"] {
+        float: left;
+    }
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .today {
+        height: 10%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .autocomplete {
+        /*the container must be positioned relative:*/
+        position: relative;
+        display: inline-block;
+        float: right;
+        width: 250px
+    }
+
+    .autocomplete-items {
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 10000;
+        /*position the autocomplete items to be the same width as the container:*/
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+    .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: #fff;
+        border-bottom: 1px solid #d4d4d4;
+        z-index: 1;
+    }
+    .autocomplete-items div:hover {
+        /*when hovering an item:*/
+        background-color: #e9e9e9;
+        z-index: 1;
+    }
+    .autocomplete-active {
+        /*when navigating through the items using the arrow keys:*/
+        background-color: DodgerBlue;
+        color: #ffffff;
+        z-index: 1;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width:1024px){
+    .logo-big{
+        font-size: 40px;
+        text-align: center;
+        float: left;
+        line-height: 30px;
+    }
+
+    .logo-small{
+        font-size: 40px;
+        text-align: left;
+        float: left;
+        line-height: 40px;
+        z-index: 2;
+        display: none;
+    }
+
+    .search{
+        height: 30px;
+        background-image: linear-gradient(royalblue, lightblue);
+        text-align: justify;
+        padding: 25px 10px 25px 10px;
+        opacity: 85%;
+    }
+
+    .search-big {
+        height: 30px;
+        background-image: linear-gradient(royalblue, lightblue);
+        text-align: justify;
+        padding: 25px;
+        opacity: 85%;
+    }
+
+    .search-bar-container {
+        padding-left: 10px;
+        float: right;
+        opacity: 100%;
+    }
+
+    .search-bar {
+        height: 30px;
+        font-size: 20px;
+        background: white;
+        opacity: 95%;
+        color: Black;
+        width: 250px;
+        border-radius: 10px;
+        float: right;
+    }
+
+    .search-button {
+        font-size: 20px;
+        height: 37px;
+        border-radius: 10px;
+        background: white;
+        opacity: 75%;
+        margin-left: 5px;
+        outline-color: invert;
+        color: black;
+        transition-duration: 0.4s;
+        float: right;
+    }
+
+    .search-button-small{
+        height: 37px;
+        border-radius: 10px;
+        opacity: 75%;
+        margin-left: 5px;
+        outline-color: invert;
+        font-size: 12px;
+        color: black;
+        transition-duration: 0.4s;
+        float: right;
+        display: none;
+
+    }
+
+    .search-button:hover {
+        background-color: deepskyblue; /* Green */
+        color: white;
+    }
+
+    .card {
+        margin-bottom: 1em;
+        margin-top: 1em;
+        margin-left: .5em;
+        margin-right: .5em;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 100%;
+        font-size: 1rem;
+        background-image: linear-gradient(to right, lightskyblue, white);
+        border-radius: 10px;
+    }
+
+    .card-main {
+        padding-top: 5px;
+        margin-left: .5em;
+        margin-right: .5em;
+        display: block;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 100%;
+        font-size: .875rem;
+        background-image: linear-gradient(to right, lightskyblue, white);
+        border-radius: 10px;
+        height:443px;
+        text-align: center;
+
+    }
+
+    .card:hover {
+        opacity: 100%;
+    }
+
+    .card::before {
+        content: "";
+    }
+
+    .card::after {
+        content: "";
+    }
+
+    .date {
+        padding-left: 3px;
+        display: inline-block;
+        text-align: left;
+        width: 30px;
+        flex: 0 0 75px;
+    }
+
+    .city-current {
+        display: none;
+    }
+
+    .city-current-full {
+        display: inline-block;
+        text-align: center;
+        font-family: 'Roboto Thin', sans-serif;
+        font-size: 185%;
+        height:50px;
+        width:100%;
+    }
+
+    .weather-icon-current{
+        display: inline-block;
+
+    }
+
+    .weather-icon-image-current{
+        height: 250px;
+        width: 250px;
+    }
+
+    .temp {
+        text-align: center;
+        line-height: 50px;
+        padding: 0 6px 0 0;
+        flex: 0 0 80px;
+        display: flex;
+        align-items: center;
+    }
+
+    .temp-current {
+        padding-top: 20px;
+        text-align: center;
+        font-style: italic;
+        font-size: 65px;
+
+    }
+
+    .weather-icon {
+        display: inline-block;
+        padding-right: 4px;
+        flex: 1 1 25px;
+        width: 45px;
+    }
+
+    .weather-icon-image{
+        width:45px;
+        height:45px;
+    }
+
+    .weather-state {
+        text-align: right;
+        line-height: 1;
+        flex: auto 0 1;
+        display: flex;
+        padding-right: 10px;
+        flex-shrink: 2;
+    }
+
+    .wind-speed {
+        display: inline-block;
+        text-align: center;
+        line-height: 1;
+        flex-shrink: 1;
+        padding-right: 5px;
+    }
+
+    #wind-speed-icon {
+        height: 15px;
+        width: 15px;
+
+    }
+
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;
+        padding-bottom: 20px;
+        padding-top: 30px;
+        padding-left: 15px;
+        padding-right: 15px;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 51%;
+        padding-bottom: 15px;
+        padding-top: 15px;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    [class*="col-"] {
+        float: left;
+
+
+    }
+
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .today {
+        height: 10%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+    .autocomplete {
+        /*the container must be positioned relative:*/
+        position: relative;
+        display: inline-block;
+        float: right;
+        width: 250px
+    }
+
+    .autocomplete-items {
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 10000;
+        /*position the autocomplete items to be the same width as the container:*/
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+    .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: white;
+        border-bottom: 1px solid #d4d4d4;
+        z-index: 1;
+    }
+    .autocomplete-items div:hover {
+        /*when hovering an item:*/
+        background-color: #e9e9e9;
+        z-index: 1;
+    }
+    .autocomplete-active {
+        /*when navigating through the items using the arrow keys:*/
+        color: #444444;
+        background-color: #e9e9e9;
+        z-index: 1;
+    }
+}
+@media only screen and (min-width: 1025px){
+    .logo-big{
+        font-size: 40px;
+        text-align: center;
+        float: left;
+        line-height: 30px;
+
+    }
+
+    .logo-small{
+        font-size: 40px;
+        text-align: left;
+        float: left;
+        line-height: 40px;
+        z-index: 2;
+        display: none;
+
+    }
+
+    .search{
+        height: 30px;
+        background-image: linear-gradient(royalblue, lightblue);
+        text-align: justify;
+        padding: 25px 10px 25px 10px;
+        opacity: 85%;
+        /*display: flex-end;*/
+    }
+
+    .search-big {
+        height: 30px;
+        background-image: linear-gradient(royalblue, lightblue);
+        text-align: justify;
+        padding: 25px;
+        opacity: 85%;
+        /*display: flex-end;*/
+    }
+
+    .search-bar-container {
+        padding-left: 10px;
+        float: right;
+        opacity: 100%;
+    }
+
+    .search-bar {
+        height: 30px;
+        font-size: 20px;
+        background: white;
+        opacity: 95%;
+        color: Black;
+        width: 250px;
+        border-radius: 10px;
+        float: right;
+    }
+
+    .search-button {
+        font-size: 20px;
+        height: 37px;
+        border-radius: 10px;
+        background: white;
+        opacity: 75%;
+        margin-left: 5px;
+        outline-color: invert;
+        color: black;
+        transition-duration: 0.4s;
+        float: right;
+    }
+
+    .search-button-small{
+        height: 37px;
+        border-radius: 10px;
+        opacity: 75%;
+        margin-left: 5px;
+        outline-color: invert;
+        font-size: 12px;
+        color: black;
+        transition-duration: 0.4s;
+        float: right;
+        display: none;
+
+    }
+
+    .search-button:hover {
+        background-color: deepskyblue; /* Green */
+        color: white;
+    }
+
+    .card {
+        margin-bottom: 1em;
+        margin-top: 1em;
+        margin-left: .5em;
+        margin-right: .5em;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 100%;
+        font-size: 1rem;
+        background-image: linear-gradient(to right, lightskyblue, white);
+        border-radius: 10px;
+    }
+
+    .card-main {
+        padding-top: 5px;
+        margin-left: .5em;
+        margin-right: .5em;
+        display: block;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 100%;
+        font-size: .875rem;
+        background-image: linear-gradient(to right, lightskyblue, white);
+        border-radius: 10px;
+        height:443px;
+        text-align: center;
+
+    }
+
+    .card:hover {
+        opacity: 100%;
+    }
+
+    .card::before {
+        content: "";
+    }
+
+    .card::after {
+        content: "";
+    }
+
+    .date {
+        padding-left: 3px;
+        display: inline-block;
+        text-align: left;
+        width: 30px;
+        flex: 0 0 75px;
+    }
+
+    .city-current {
+        display: none;
+    }
+
+    .city-current-full {
+        display: inline-block;
+        text-align: center;
+        font-family: 'Roboto Thin', sans-serif;
+        font-size: 185%;
+        height:50px;
+        width:100%;
+    }
+
+    .weather-icon-current{
+        display: inline-block;
+
+    }
+
+    .weather-icon-image-current{
+        height: 250px;
+        width: 250px;
+    }
+
+    .temp {
+        text-align: center;
+        line-height: 50px;
+        padding: 0 6px 0 0;
+        flex: 0 0 80px;
+        display: flex;
+        align-items: center;
+    }
+
+    .temp-current {
+        padding-top: 20px;
+        text-align: center;
+        font-style: italic;
+        font-size: 65px;
+    }
+
+    .weather-icon {
+        display: inline-block;
+        padding-right: 4px;
+        flex: 1 1 25px;
+        width: 45px;
+    }
+
+    .weather-icon-image{
+        width:45px;
+        height:45px;
+    }
+
+    .weather-state {
+        text-align: left;
+        line-height: 1;
+        flex: auto 0 0;
+        display: flex;
+        padding-right: 10px;
+    }
+
+    .wind-speed {
+        padding-right: 5px;
+        display: inline-block;
+        text-align: center;
+        line-height: 1;
+    }
+
+    #wind-speed-icon {
+        height: 15px;
+        width: 15px;
+
+    }
+
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 420px;
+        padding-bottom: 20px;
+        padding-top: 30px;
+        padding-left: 5%;
+        padding-right: 15px;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 515px;
+        padding-bottom: 15px;
+        padding-top: 15px;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    [class*="col-"] {
+        float: left;
+    }
+
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .today {
+        height: 10%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+    .autocomplete {
+        /*the container must be positioned relative:*/
+        position: relative;
+        display: inline-block;
+        float: right;
+        width: 25%;
+    }
+
+    .autocomplete-items {
+        position: absolute;
+        border: 1px solid #d4d4d4;
+        border-bottom: none;
+        border-top: none;
+        z-index: 10000;
+        /*position the autocomplete items to be the same width as the container:*/
+        top: 100%;
+        left: 0;
+        right: 0;
+    }
+    .autocomplete-items div {
+        padding: 10px;
+        cursor: pointer;
+        background-color: white;
+        border-bottom: 1px solid #d4d4d4;
+        z-index: 1;
+    }
+    .autocomplete-items div:hover {
+        /*when hovering an item:*/
+        background-color: #e9e9e9;
+        z-index: 1;
+    }
+    .autocomplete-active {
+        /*when navigating through the items using the arrow keys:*/
+        color: #444444;
+        background-color: #e9e9e9;
+        z-index: 1;
+    }
+}
