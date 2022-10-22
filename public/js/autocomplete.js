@@ -64,6 +64,15 @@ function autocomplete(inp, arr) {
                     weather.search();
 
                 });
+                b.addEventListener("click", function(e) {
+                    /*insert the value for the autocomplete text field:*/
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    /*close the list of autocompleted values,
+                    (or any other open lists of autocompleted values:*/
+                    closeAllLists();
+                    weather.search();
+
+                });
                 a.appendChild(b);
                 numCities = numCities+1;
                 console.log(numCities);

@@ -23,11 +23,10 @@ let weather = {
         )
             .then((response) => {
                 if (!response.ok) {
-                    alert("No weather found. Please double check your that your query matches the format of \"City, State, Country\" or \"City, County\".");
-                    throw new Error("No weather found.");
+                    throw new Error("No weather found. Please double check your that your query matches the format of \"City, State, Country\" or \"City, County\".");
                 }
                 return response.json();
-            })
+            }).catch(err => alert("No weather found. Please double check your that your query matches the format of \"City, State, Country\" or \"City, County\"."))
             .then((data) => this.showWeather(data));
     },
     /**
@@ -43,7 +42,7 @@ let weather = {
      * @param  {json} data  json from weatherbit.io api call
      */
     showWeather: function(data){
-
+        console.log(data);
         const weekday = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
         const {city_name, state_code, country_code} = data;
 
